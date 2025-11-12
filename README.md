@@ -1,10 +1,10 @@
-# Apollo Repair Framework
+# [NeurIPS 2025] Apollo Repair Framework 
 
 ![Apollo Logo](assets/logo.png)
 
 ## Overview 
 
-The codebase implements the Apollo framework, which uses an agentic approach to repair Lean4 code. It supports whole-proof generation models and integrates with Lean compiler via Lean REPL. For a full description of the framework and detailed algorithms, see our paper [“APOLLO: Automated LLM and Lean Collaboration for Advanced Formal Reasoning”](https://arxiv.org/abs/2505.05758) on arXiv.
+The codebase implements the Apollo framework, which uses an agentic approach to repair Lean4 code. It supports whole-proof generation models and integrates with Lean compiler via Lean REPL. For a full description of the framework and detailed algorithms, see our paper [“APOLLO: Automated LLM and Lean Collaboration for Advanced Formal Reasoning”](https://openreview.net/forum?id=fxDCgOruk0) published at NeurIPS 2025.
 
 
 ![Apollo Pipeline](assets/pipeline.png)
@@ -172,14 +172,13 @@ Cleaning and updating the Lean REPL typically fixes all problems. This repositor
 
 ## Bibtex Citation
 ```bibtex
-@misc{ospanov2025apolloautomatedllmlean,
-      title={APOLLO: Automated LLM and Lean Collaboration for Advanced Formal Reasoning}, 
-      author={Azim Ospanov and Farzan Farnia and Roozbeh Yousefzadeh},
-      year={2025},
-      eprint={2505.05758},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2505.05758}, 
+@inproceedings{
+   ospanov2025apollo,
+   title={{APOLLO}: Automated {LLM} and Lean Collaboration for Advanced Formal Reasoning},
+   author={Azim Ospanov and Farzan Farnia and Roozbeh Yousefzadeh},
+   booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+   year={2025},
+   url={https://openreview.net/forum?id=fxDCgOruk0}
 }
 ```
 
