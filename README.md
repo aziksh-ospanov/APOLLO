@@ -150,6 +150,7 @@ We save the repaired theorem as a Lean file. Refer to config file to change the 
 We provide the evaluation datasets as JSONL files in the datasets directory. Each entry includes an `informal_statement` for the natural-language problem description and a `formal_statement` for the corresponding Lean4 formulation.
 
 ## Troubleshooting REPL
+### General Troubleshooting
 On rare occasions, the built REPL may stop compiling proofs, for example, after GPU cluster changes or a system reboot. To test whether REPL works, we supply `test_repl.py` script. 
 
 If REPL is set up correctly, you should see following message:
@@ -169,6 +170,26 @@ lake update
 lake build
 ```
 Cleaning and updating the Lean REPL typically fixes all problems. This repository is configured for Lean 4.17.0. To update the REPL version, please refer to the [Lean REPL repository](https://github.com/leanprover-community/repl).
+
+### Missing Mathlib Namespaces in REPL
+
+If running the REPL with:
+
+```bash
+cat temp.json | lean exe repl
+```
+
+does not allow opening namespaces such as `BigOperators` or `Real` after importing `Mathlib`, you may need to ensure that the Mathlib cache is downloaded and built before starting the REPL.
+
+Run the following inside the REPL directory:
+
+```bash
+lake exe cache get
+lake build Mathlib
+```
+
+This should resolve issues where `ApolloRepair` or namespace imports do not behave as expected. This applies both to local installations (e.g., VS Code + Lake) and cloud installations using `elan`.
+
 
 ## Bibtex Citation
 ```bibtex
